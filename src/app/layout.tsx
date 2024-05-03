@@ -1,5 +1,9 @@
+import "dayjs/locale/de";
+import "./globals.css";
+
 import { ErrorBoundary } from "@/component/common/error-boundary";
 import { Suspense } from "@/component/common/suspense";
+import { ThemeProvider } from "@/component/provider/theme-provider";
 import { NextLayout } from "@/model/next";
 import { fontSans } from "@/style/font";
 import { cn } from "@/style/helper";
@@ -7,9 +11,6 @@ import { env } from "@/util/env";
 import dayjs from "dayjs";
 import { Metadata } from "next";
 import PlausibleProvider from "next-plausible";
-
-import "dayjs/locale/de";
-import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Synbase",
@@ -27,9 +28,11 @@ const Layout: NextLayout = async ({ children }) => {
             </head>
 
             <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
-                <ErrorBoundary>
-                    <Suspense>{children}</Suspense>
-                </ErrorBoundary>
+                <ThemeProvider enableSystem attribute={"class"} defaultTheme={"system"}>
+                    <ErrorBoundary>
+                        <Suspense>{children}</Suspense>
+                    </ErrorBoundary>
+                </ThemeProvider>
             </body>
         </html>
     );
