@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import PlausibleProvider from "next-plausible";
 
 import "dayjs/locale/de";
+import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Synbase",
