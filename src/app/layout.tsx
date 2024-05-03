@@ -1,6 +1,8 @@
 import { ErrorBoundary } from "@/component/common/error-boundary";
 import { Suspense } from "@/component/common/suspense";
 import { NextLayout } from "@/model/next";
+import { inter } from "@/style/font";
+import { cn } from "@/style/helper";
 import { env } from "@/util/env";
 import dayjs from "dayjs";
 import { Metadata } from "next";
@@ -24,7 +26,7 @@ const Layout: NextLayout = async ({ children }) => {
                 <PlausibleProvider selfHosted customDomain={env("PLAUSIBLE_HOST")} domain={env("PLAUSIBLE_DOMAIN")} />
             </head>
 
-            <body>
+            <body className={cn("min-h-screen bg-background font-sans antialiased", inter.variable)}>
                 <ErrorBoundary>
                     <Suspense>{children}</Suspense>
                 </ErrorBoundary>
