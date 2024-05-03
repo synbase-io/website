@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+.turbo
+*.log
+*.crt
+*.key
+*.csr
+.env
+.next
+out
+build
+next-env.d.ts
+*.tsbuildinfo

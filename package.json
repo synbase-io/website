@@ -1,0 +1,44 @@
+{
+    "name": "@synbase/website",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "next build",
+        "clean": "echo 'not implemented'",
+        "dev": "next dev -p 443 --experimental-https --experimental-https-cert ./ssl.crt --experimental-https-key ./ssl.key --turbo",
+        "lint": "eslint src",
+        "start": "next start"
+    },
+    "dependencies": {
+        "dayjs": "^1.11.11",
+        "next": "^14.2.3",
+        "next-plausible": "^3.12.0",
+        "radash": "^12.1.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "sharp": "^0.33.3",
+        "use-error-boundary": "^2.0.6"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.1.1",
+        "@types/bun": "^1.1.1",
+        "@types/react": "^18.3.1",
+        "@types/react-dom": "^18.3.0",
+        "dotenv-cli": "^7.4.1",
+        "eslint": "^9.1.1",
+        "eslint-config-prettier": "^9.1.0",
+        "prettier": "^3.2.5",
+        "rimraf": "^5.0.5",
+        "server-only": "^0.0.1",
+        "typescript": "^5.4.5",
+        "typescript-eslint": "^7.8.0"
+    },
+    "prettier": {
+        "semi": true,
+        "trailingComma": "all",
+        "doubleQuote": true,
+        "printWidth": 120,
+        "tabWidth": 4,
+        "endOfLine": "lf"
+    }
+}

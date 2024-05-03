@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "wiggin77.codedox",
+        "dbaeumer.vscode-eslint",
+        "christian-kohler.npm-intellisense",
+        "christian-kohler.path-intellisense",
+        "prisma.prisma",
+        "redhat.vscode-yaml",
+        "davidanson.vscode-markdownlint"
+    ]
+}
