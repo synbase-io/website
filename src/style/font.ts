@@ -1,6 +1,6 @@
-import { Inter, Orbitron } from "next/font/google";
+import { Inter as FontSans, Orbitron } from "next/font/google";
 
-export const inter = Inter({
+export const fontSans = FontSans({
     subsets: ["latin"],
     variable: "--font-sans",
 });
