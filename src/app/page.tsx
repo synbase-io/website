@@ -1,11 +1,7 @@
-import { Suspense } from "@/component/common/suspense";
+import { Small } from "@/component/ui/typography";
 
 const Page = async () => {
-    return (
-        <div className="h-64">
-            <Suspense>Muh</Suspense>
-        </div>
-    );
+    return <Small className="mt-16 text-center">Back soon. 🫶🏻</Small>;
 };
 
 export default Page;
