@@ -1,7 +1,8 @@
-"use client";
-
+import { cn } from "@/style/helper";
 import { draw } from "radash";
 import { ReactNode, Suspense as ReactSuspense, useMemo } from "react";
+import { Progress } from "../ui/progress";
+import { Small } from "../ui/typography";
 
 const phrases = [
     "Wir bereiten alles vor 👽",
@@ -18,10 +19,23 @@ const phrases = [
 
 export const Suspense: React.FC<{
     children?: ReactNode;
+    className?: string;
     fallback?: ReactNode;
-}> = ({ children, fallback }) => {
+}> = ({ children, className, fallback }) => {
     const phrase = useMemo(() => draw(phrases), []);
 
-    // TODO: style fallback component
-    return <ReactSuspense fallback={fallback ?? <p>{phrase ?? "Bitte warten"}</p>}>{children}</ReactSuspense>;
+    return (
+        <ReactSuspense
+            fallback={
+                fallback ?? (
+                    <div className={cn("flex animate-pulse items-center space-x-2", className)}>
+                        <Progress className="flex-none" />
+                        <Small className="font-semibold">{phrase}</Small>
+                    </div>
+                )
+            }
+        >
+            {children}
+        </ReactSuspense>
+    );
 };
