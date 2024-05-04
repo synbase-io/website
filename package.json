@@ -5,7 +5,7 @@
     "scripts": {
         "build": "next build",
         "clean": "echo 'not implemented'",
-        "dev": "next dev -p 443 --experimental-https --experimental-https-cert ./ssl.crt --experimental-https-key ./ssl.key --turbo",
+        "dev": "next dev -p 443 --experimental-https --experimental-https-cert ./ssl.crt --experimental-https-key ./ssl.key",
         "lint": "eslint src",
         "start": "next start"
     },

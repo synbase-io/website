@@ -8,6 +8,7 @@
         "prisma.prisma",
         "redhat.vscode-yaml",
         "davidanson.vscode-markdownlint",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "unifiedjs.vscode-mdx"
     ]
 }
