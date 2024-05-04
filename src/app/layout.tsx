@@ -22,7 +22,7 @@ const Layout: NextLayout = async ({ children }) => {
     dayjs.locale("de");
 
     return (
-        <html lang={"de"}>
+        <html suppressHydrationWarning lang={"de"}>
             <head>
                 <PlausibleProvider selfHosted customDomain={env("PLAUSIBLE_HOST")} domain={env("PLAUSIBLE_DOMAIN")} />
             </head>
