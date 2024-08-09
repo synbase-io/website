@@ -1,13 +1,16 @@
 {
     "recommendations": [
         "editorconfig.editorconfig",
-        "esbenp.prettier-vscode",
-        "wiggin77.codedox",
+        "dbaeumer.vscode-eslint",
         "christian-kohler.npm-intellisense",
         "christian-kohler.path-intellisense",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "wiggin77.codedox",
+        "yoavbls.pretty-ts-errors",
+        "linbudu.pnpm-vscode-helper",
+        "ms-azuretools.vscode-docker",
         "prisma.prisma",
-        "redhat.vscode-yaml",
-        "davidanson.vscode-markdownlint",
-        "bradlc.vscode-tailwindcss"
+        "suhelmakkad.shadcn-ui"
     ]
 }

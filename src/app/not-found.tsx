@@ -2,7 +2,7 @@ import "server-only";
 
 import Image from "next/image";
 
-const Page = () => {
+const NotFoundPage = () => {
     return (
         <div>
             <h1>404</h1>
@@ -12,4 +12,4 @@ const Page = () => {
     );
 };
 
-export default Page;
+export default NotFoundPage;

@@ -1,9 +1,13 @@
 import type { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config = {
     darkMode: ["class"],
-    content: ["./src/**/*.{ts,tsx,mdx}"],
+    content: [
+        "./pages/**/*.{ts,tsx}",
+        "./components/**/*.{ts,tsx}",
+        "./app/**/*.{ts,tsx}",
+        "./src/**/*.{ts,tsx}",
+    ],
     prefix: "",
     theme: {
         container: {
@@ -53,9 +57,6 @@ const config = {
                 lg: "var(--radius)",
                 md: "calc(var(--radius) - 2px)",
                 sm: "calc(var(--radius) - 4px)",
-            },
-            fontFamily: {
-                sans: ["var(--font-sans)", ...fontFamily.sans],
             },
             keyframes: {
                 "accordion-down": {

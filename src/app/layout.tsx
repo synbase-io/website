@@ -1,15 +1,13 @@
+import "@/styles/globals.css";
 import "dayjs/locale/de";
-import "./globals.css";
 
-import { ErrorBoundary } from "@/component/common/error-boundary";
-import { Suspense } from "@/component/common/suspense";
-import { ThemeProvider } from "@/component/provider/theme-provider";
-import { NextLayout } from "@/model/next";
-import { fontSans } from "@/style/font";
-import { cn } from "@/style/helper";
-import { env } from "@/util/env";
+import { env } from "@/env";
+import { type NextLayout } from "@/model/next";
+import { fontSans } from "@/styles/font";
+import { TRPCReactProvider } from "@/trpc/react";
+import { cn } from "@/utils/style";
 import dayjs from "dayjs";
-import { Metadata } from "next";
+import { type Metadata } from "next";
 import PlausibleProvider from "next-plausible";
 
 export const metadata: Metadata = {
@@ -22,17 +20,24 @@ const Layout: NextLayout = async ({ children }) => {
     dayjs.locale("de");
 
     return (
-        <html suppressHydrationWarning lang={"de"}>
+        <html suppressHydrationWarning lang="de">
             <head>
-                <PlausibleProvider selfHosted customDomain={env("PLAUSIBLE_HOST")} domain={env("PLAUSIBLE_DOMAIN")} />
+                <PlausibleProvider
+                    selfHosted
+                    customDomain={env.PLAUSIBLE_HOST}
+                    domain={env.PLAUSIBLE_DOMAIN}
+                />
             </head>
 
-            <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
-                <ThemeProvider enableSystem attribute={"class"} defaultTheme={"system"}>
-                    <ErrorBoundary>
-                        <Suspense>{children}</Suspense>
-                    </ErrorBoundary>
-                </ThemeProvider>
+            <body
+                className={cn(
+                    "min-h-screen bg-background font-sans antialiased",
+                    fontSans.variable,
+                )}
+            >
+                <TRPCReactProvider>
+                    <main>{children}</main>
+                </TRPCReactProvider>
             </body>
         </html>
     );
