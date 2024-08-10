@@ -4,7 +4,15 @@
  */
 await import("./src/env.js");
 
-/** @type {import("next").NextConfig} */
-const config = {};
+import createMDX from "@next/mdx";
 
-export default config;
+const withMDX = createMDX({
+    // Add markdown plugins here, as desired
+});
+
+/** @type {import("next").NextConfig} */
+const config = {
+    pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
+};
+
+export default withMDX(config);

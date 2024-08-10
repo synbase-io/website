@@ -36,7 +36,7 @@ const Layout: NextLayout = async ({ children }) => {
                 )}
             >
                 <TRPCReactProvider>
-                    <main>{children}</main>
+                    <main className="prose">{children}</main>
                 </TRPCReactProvider>
             </body>
         </html>
