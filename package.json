@@ -15,9 +15,11 @@
         "db:migrate": "prisma migrate deploy",
         "db:push": "prisma db push",
         "db:studio": "prisma studio",
+        "predev": "prisma migrate dev",
         "dev": "next dev -p 443 --experimental-https --experimental-https-cert ./ssl.crt --experimental-https-key ./ssl.key --turbo",
         "postinstall": "prisma generate",
         "lint": "next lint",
+        "prestart": "prisma migrate deploy",
         "start": "next start"
     },
     "prettier": {
